@@ -1,0 +1,28 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="GroovyBeanService"
+     targetNamespace="com:mmikhail:groovy:service"
+     xmlns:tns="com:mmikhail:groovy:service"
+     xmlns:inp1="com:mmikhail:groovy:service"
+     xmlns:inp2="com:mmikhail:groovy:service"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="com:mmikhail:groovy:service"
+             elementFormDefault="qualified">
+            <element name="string" type="string"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessage">
+        <wsdl:part name="request" element="tns:string"/>
+    </wsdl:message>
+    <wsdl:message name="replyMessage">
+        <wsdl:part name="response" element="tns:string"/>
+    </wsdl:message>
+    <wsdl:portType name="sayhello_ptt">
+        <wsdl:operation name="sayhello">
+            <wsdl:input message="tns:requestMessage"/>
+            <wsdl:output message="tns:replyMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
